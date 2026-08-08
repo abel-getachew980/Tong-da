@@ -1,4 +1,6 @@
 const am = {
+  hotel_name: 'ቶንግ ዳ ሆቴል',
+
   // Navbar
   nav_home: 'ዋና ገጽ',
   nav_about: 'ስለ ሆቴሉ',

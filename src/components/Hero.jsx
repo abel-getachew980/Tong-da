@@ -1,4 +1,4 @@
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Navigation } from 'lucide-react';
 import entranceImg from '../assets/Entrance.webp';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -21,12 +21,21 @@ export default function Hero() {
         </p>
         <h1 className="hero__title">
           通达酒店<br />
-          <span>Tong Da Hotel</span>
+          <span>{t('hotel_name')}</span>
         </h1>
         <p className="hero__subtitle">{t('hero_subtitle')}</p>
         <div className="hero__cta">
           <a href="#rooms" className="btn-primary">{t('hero_cta_rooms')}</a>
           <a href="#amenities" className="btn-outline">{t('hero_cta_amenities')}</a>
+          <a
+            href="https://maps.app.goo.gl/ca4YEwNP6WqgYViE6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-outline"
+          >
+            <Navigation size={16} />
+            {t('loc_directions')}
+          </a>
         </div>
 
         <div className="hero__badges">

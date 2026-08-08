@@ -1,4 +1,6 @@
 const en = {
+  hotel_name: 'Tong Da Hotel',
+
   // Navbar
   nav_home: 'Home',
   nav_about: 'About',

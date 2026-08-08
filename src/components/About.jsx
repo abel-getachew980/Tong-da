@@ -47,12 +47,6 @@ export default function About() {
               </div>
             ))}
           </div>
-
-          <div className="about__price">
-            <span className="about__price-from">{t('about_price_from')}</span>
-            <span className="about__price-num">$135</span>
-            <span className="about__price-per">{t('about_price_per')}</span>
-          </div>
         </div>
       </div>
     </section>

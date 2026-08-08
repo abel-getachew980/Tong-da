@@ -68,7 +68,7 @@ export default function Footer() {
       </div>
 
       <div className="footer__bottom container">
-        <p>© {new Date().getFullYear()} Tong Da Hotel. {t('footer_rights')}</p>
+        <p>© {new Date().getFullYear()} {t('hotel_name')}. {t('footer_rights')}</p>
         <button
           className="footer__top-btn"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}

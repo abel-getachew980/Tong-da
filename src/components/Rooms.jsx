@@ -14,7 +14,6 @@ export default function Rooms() {
       id: 1,
       type: t('room1_type'),
       configurations: t('room1_config'),
-      price: 135,
       img: room1,
       description: t('room1_desc'),
       features: ['feat_soundproofing', 'feat_blackout', 'feat_safe', 'feat_slippers', 'feat_wifi'],
@@ -23,7 +22,6 @@ export default function Rooms() {
       id: 2,
       type: t('room2_type'),
       configurations: t('room2_config'),
-      price: 149,
       img: room2,
       description: t('room2_desc'),
       features: ['feat_soundproofing', 'feat_blackout', 'feat_safe', 'feat_slippers', 'feat_wifi'],
@@ -32,7 +30,6 @@ export default function Rooms() {
       id: 3,
       type: t('room3_type'),
       configurations: t('room3_config'),
-      price: 159,
       img: interior,
       description: t('room3_desc'),
       features: ['feat_soundproofing', 'feat_blackout', 'feat_safe', 'feat_slippers', 'feat_wifi'],
@@ -41,7 +38,6 @@ export default function Rooms() {
       id: 4,
       type: t('room4_type'),
       configurations: t('room4_config'),
-      price: 169,
       img: room1,
       description: t('room4_desc'),
       features: ['feat_floorplan', 'feat_living', 'feat_soundproofing', 'feat_blackout', 'feat_safe', 'feat_slippers', 'feat_wifi'],
@@ -87,9 +83,6 @@ export default function Rooms() {
         <div className="rooms__detail">
           <div className="rooms__img-wrap">
             <img src={room.img} alt={room.type} />
-            <span className="rooms__price-tag">
-              {t('rooms_from')} ${room.price}<small>{t('rooms_night')}</small>
-            </span>
           </div>
           <div className="rooms__info">
             <p className="rooms__config">{room.configurations}</p>
