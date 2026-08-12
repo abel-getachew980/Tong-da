@@ -144,7 +144,6 @@ const en = {
 
   // Footer
   footer_tagline: 'Authentic Chinese Hospitality\nin the Heart of Addis Ababa',
-  footer_quicklinks: 'Quick Links',
   footer_contact: 'Contact',
   footer_address: 'Rwanda Street, Bole District\nAddis Ababa, Ethiopia',
   footer_pluscode: 'Plus Code: XQQJ+X84',

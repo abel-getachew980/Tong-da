@@ -144,7 +144,6 @@ const am = {
 
   // Footer
   footer_tagline: 'እውነተኛ የቻይና እንግዳ ተቀባይነት\nበአዲስ አበባ ልብ ውስጥ',
-  footer_quicklinks: 'ፈጣን አገናኞች',
   footer_contact: 'ያግኙን',
   footer_address: 'ሩዋንዳ ጎዳና፣ ቦሌ ክፍለ ከተማ\nአዲስ አበባ፣ ኢትዮጵያ',
   footer_pluscode: 'ፕላስ ኮድ፦ XQQJ+X84',
