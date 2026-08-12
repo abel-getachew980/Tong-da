@@ -12,16 +12,6 @@ function InstaIcon() {
 export default function Footer() {
   const { t } = useLanguage();
 
-  const navItems = [
-    { key: 'nav_home',         href: '#home' },
-    { key: 'nav_about',        href: '#about' },
-    { key: 'nav_rooms',        href: '#rooms' },
-    { key: 'nav_amenities',    href: '#amenities' },
-    { key: 'nav_dining',       href: '#dining' },
-    { key: 'nav_testimonials', href: '#testimonials' },
-    { key: 'nav_location',     href: '#location' },
-  ];
-
   return (
     <footer className="footer">
       <div className="container footer__inner">
@@ -43,17 +33,6 @@ export default function Footer() {
             <InstaIcon />
             <span>@tong.da.hotel</span>
           </a>
-        </div>
-
-        <div className="footer__links-col">
-          <h4 className="footer__col-title">{t('footer_quicklinks')}</h4>
-          <nav>
-            {navItems.map(item => (
-              <a key={item.href} href={item.href} className="footer__link">
-                {t(item.key)}
-              </a>
-            ))}
-          </nav>
         </div>
 
         <div className="footer__links-col">

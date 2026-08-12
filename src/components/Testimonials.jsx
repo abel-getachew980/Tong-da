@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Star, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 function Stars({ count }) {
@@ -16,10 +16,51 @@ export default function Testimonials() {
   const [active, setActive] = useState(0);
   const { t } = useLanguage();
 
+  const GOOGLE_REVIEWS_URL = 'https://maps.app.goo.gl/ca4YEwNP6WqgYViE6';
+  const TRIPADVISOR_URL = 'https://www.tripadvisor.com/Hotel_Review-g293791-d25286720-Reviews-Tong_Da_Hotel-Addis_Ababa.html';
+  const TRIP_COM_URL = 'https://www.trip.com/hotels/addis-ababa-hotel-detail-101234398/tong-da-hotel/';
+
   const testimonials = [
-    { name: 'Travel Addis', rating: 5, avatar: 'TA', textKey: 't1_text' },
-    { name: 'Chuang Wu',    rating: 5, avatar: 'CW', textKey: 't2_text' },
-    { name: 'Helen Tesfaye',rating: 4, avatar: 'HT', textKey: 't3_text' },
+    {
+      name: 'Travel Addis',
+      rating: 5,
+      avatar: 'TA',
+      textKey: 't1_text',
+      sourceKey: 'testi_google_maps_review',
+      url: GOOGLE_REVIEWS_URL,
+    },
+    {
+      name: 'Chuang Wu',
+      rating: 5,
+      avatar: 'CW',
+      textKey: 't2_text',
+      sourceKey: 'testi_google_maps_review',
+      url: GOOGLE_REVIEWS_URL,
+    },
+    {
+      name: 'Helen Tesfaye',
+      rating: 4,
+      avatar: 'HT',
+      textKey: 't3_text',
+      sourceKey: 'testi_google_maps_review',
+      url: GOOGLE_REVIEWS_URL,
+    },
+    {
+      name: 'Verified Guest',
+      rating: 5,
+      avatar: 'VG',
+      textKey: 't4_text',
+      sourceKey: 'testi_tripadvisor_review',
+      url: TRIPADVISOR_URL,
+    },
+    {
+      name: 'Business Traveller',
+      rating: 5,
+      avatar: 'BT',
+      textKey: 't5_text',
+      sourceKey: 'testi_trip_com_review',
+      url: TRIP_COM_URL,
+    },
   ];
 
   const prev = () => setActive(a => (a - 1 + testimonials.length) % testimonials.length);
@@ -40,6 +81,36 @@ export default function Testimonials() {
               <span className="testi__avg-label">{t('testi_avg_label')}</span>
             </div>
           </div>
+
+          <div className="testi__platforms">
+            <a
+              href={GOOGLE_REVIEWS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="testi__platform-btn"
+            >
+              <span>📍 {t('testi_btn_google')}</span>
+              <ExternalLink size={13} />
+            </a>
+            <a
+              href={TRIPADVISOR_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="testi__platform-btn"
+            >
+              <span>🦉 {t('testi_btn_tripadvisor')}</span>
+              <ExternalLink size={13} />
+            </a>
+            <a
+              href={TRIP_COM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="testi__platform-btn"
+            >
+              <span>✈️ {t('testi_btn_trip_com')}</span>
+              <ExternalLink size={13} />
+            </a>
+          </div>
         </div>
 
         <div className="testi__right">
@@ -52,7 +123,14 @@ export default function Testimonials() {
               <div className="testi__avatar">{testimonials[active].avatar}</div>
               <div>
                 <strong className="testi__name">{testimonials[active].name}</strong>
-                <span className="testi__source">{t('testi_verified')}</span>
+                <a
+                  href={testimonials[active].url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="testi__source-link"
+                >
+                  {t(testimonials[active].sourceKey)} <ExternalLink size={11} />
+                </a>
               </div>
             </div>
           </div>

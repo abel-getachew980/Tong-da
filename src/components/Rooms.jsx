@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import room1 from '../assets/room 1.jpeg';
-import room2 from '../assets/room 2.jpeg';
-import interior from '../assets/Interior.jpeg';
+import stdSingle from '../assets/Standard single room.webp';
+import stdTwin from '../assets/Standard twin room.webp';
+import eliteSingle from '../assets/Elite single room.webp';
+import eliteTwin from '../assets/Elite twin room.webp';
 import { BedDouble, BedSingle, ShieldCheck, Blinds, Wifi, Lock } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -12,35 +13,39 @@ export default function Rooms() {
   const rooms = [
     {
       id: 1,
-      type: t('room1_type'),
-      configurations: t('room1_config'),
-      img: room1,
-      description: t('room1_desc'),
+      typeKey: 'room_std_single_type',
+      configKey: 'room_std_single_config',
+      descKey: 'room_std_single_desc',
+      price: '$140',
+      img: stdSingle,
       features: ['feat_soundproofing', 'feat_blackout', 'feat_safe', 'feat_slippers', 'feat_wifi'],
     },
     {
       id: 2,
-      type: t('room2_type'),
-      configurations: t('room2_config'),
-      img: room2,
-      description: t('room2_desc'),
+      typeKey: 'room_std_twin_type',
+      configKey: 'room_std_twin_config',
+      descKey: 'room_std_twin_desc',
+      price: '$144',
+      img: stdTwin,
       features: ['feat_soundproofing', 'feat_blackout', 'feat_safe', 'feat_slippers', 'feat_wifi'],
     },
     {
       id: 3,
-      type: t('room3_type'),
-      configurations: t('room3_config'),
-      img: interior,
-      description: t('room3_desc'),
+      typeKey: 'room_elite_single_type',
+      configKey: 'room_elite_single_config',
+      descKey: 'room_elite_single_desc',
+      price: '$149',
+      img: eliteSingle,
       features: ['feat_soundproofing', 'feat_blackout', 'feat_safe', 'feat_slippers', 'feat_wifi'],
     },
     {
       id: 4,
-      type: t('room4_type'),
-      configurations: t('room4_config'),
-      img: room1,
-      description: t('room4_desc'),
-      features: ['feat_floorplan', 'feat_living', 'feat_soundproofing', 'feat_blackout', 'feat_safe', 'feat_slippers', 'feat_wifi'],
+      typeKey: 'room_elite_twin_type',
+      configKey: 'room_elite_twin_config',
+      descKey: 'room_elite_twin_desc',
+      price: '$158',
+      img: eliteTwin,
+      features: ['feat_soundproofing', 'feat_blackout', 'feat_safe', 'feat_slippers', 'feat_wifi'],
     },
   ];
 
@@ -75,19 +80,23 @@ export default function Rooms() {
               role="tab"
               aria-selected={active === i}
             >
-              {r.type}
+              {t(r.typeKey)}
             </button>
           ))}
         </div>
 
         <div className="rooms__detail">
           <div className="rooms__img-wrap">
-            <img src={room.img} alt={room.type} />
+            <img src={room.img} alt={t(room.typeKey)} />
+            <div className="rooms__price-tag">
+              {room.price}
+              <small>{t('rooms_night')}</small>
+            </div>
           </div>
           <div className="rooms__info">
-            <p className="rooms__config">{room.configurations}</p>
-            <h3 className="rooms__name">{room.type}</h3>
-            <p className="rooms__desc">{room.description}</p>
+            <p className="rooms__config">{t(room.configKey)}</p>
+            <h3 className="rooms__name">{t(room.typeKey)}</h3>
+            <p className="rooms__desc">{t(room.descKey)}</p>
 
             <ul className="rooms__features">
               {room.features.map(fKey => (

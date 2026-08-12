@@ -1,5 +1,5 @@
 import gymImg from '../assets/gym.webp';
-import { Wifi, Car, Dumbbell, Sparkles, Printer, Coffee, Utensils, Building2 } from 'lucide-react';
+import { Wifi, Car, Dumbbell, Sparkles, Coffee, Utensils, Building2 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Amenities() {
@@ -10,7 +10,6 @@ export default function Amenities() {
     { icon: <Car size={28} />,       titleKey: 'am2_title', descKey: 'am2_desc' },
     { icon: <Dumbbell size={28} />,  titleKey: 'am3_title', descKey: 'am3_desc' },
     { icon: <Sparkles size={28} />,  titleKey: 'am4_title', descKey: 'am4_desc' },
-    { icon: <Printer size={28} />,   titleKey: 'am5_title', descKey: 'am5_desc' },
     { icon: <Coffee size={28} />,    titleKey: 'am6_title', descKey: 'am6_desc' },
     { icon: <Utensils size={28} />,  titleKey: 'am7_title', descKey: 'am7_desc' },
     { icon: <Building2 size={28} />, titleKey: 'am8_title', descKey: 'am8_desc' },

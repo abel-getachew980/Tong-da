@@ -1,4 +1,5 @@
-import diningTable from '../assets/Dining table.webp';
+import diningImg from '../assets/Dining.jpg';
+import dining2Img from '../assets/Dining2.jpg';
 import food1 from '../assets/Food 1.webp';
 import exterior3 from '../assets/Exterior 3.webp';
 import { UtensilsCrossed, Coffee, Wine, Sunrise } from 'lucide-react';
@@ -11,7 +12,7 @@ export default function Dining() {
     {
       icon: <UtensilsCrossed size={22} />,
       nameKey: 'd1_name', floorKey: 'd1_floor', descKey: 'd1_desc', tagKey: 'd1_tag',
-      img: diningTable,
+      img: diningImg,
     },
     {
       icon: <Sunrise size={22} />,
@@ -26,7 +27,7 @@ export default function Dining() {
     {
       icon: <Coffee size={22} />,
       nameKey: 'd4_name', floorKey: 'd4_floor', descKey: 'd4_desc', tagKey: 'd4_tag',
-      img: diningTable,
+      img: dining2Img,
     },
   ];
 
